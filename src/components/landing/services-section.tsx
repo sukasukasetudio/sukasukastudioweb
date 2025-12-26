@@ -29,7 +29,7 @@ export default function ServicesSection() {
     <section id="services" className="py-24 sm:py-32 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-secondary-foreground sm:text-4xl">
             What We Do
           </h2>
           <p className="mt-4 text-lg text-muted-foreground tracking-wide">
@@ -38,11 +38,11 @@ export default function ServicesSection() {
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
-            <Card key={service.title} className="bg-background/50 border-border/50 text-center hover:border-primary/50 transition-colors duration-300 flex flex-col">
+            <Card key={service.title} className="bg-secondary/50 border-border/50 text-center hover:border-primary/50 transition-colors duration-300 flex flex-col">
               <CardHeader className="items-center flex-grow">
-                <div className="mb-4 p-4 bg-secondary rounded-full">{service.icon}</div>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
-                <CardDescription className="pt-2 text-sm">{service.description}</CardDescription>
+                <div className="mb-4 p-4 bg-background/10 rounded-full">{service.icon}</div>
+                <CardTitle className="text-xl text-secondary-foreground">{service.title}</CardTitle>
+                <CardDescription className="pt-2 text-sm text-muted-foreground">{service.description}</CardDescription>
               </CardHeader>
             </Card>
           ))}

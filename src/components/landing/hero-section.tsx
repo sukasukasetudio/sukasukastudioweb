@@ -4,7 +4,7 @@ import { HeroHighlight, Highlight } from '../ui/hero-highlight';
 
 export default function HeroSection() {
   return (
-    <section className="w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center">
+    <section className="w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center bg-background">
       <HeroHighlight containerClassName="h-auto">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-black tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl text-foreground">

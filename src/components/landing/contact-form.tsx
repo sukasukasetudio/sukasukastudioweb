@@ -93,7 +93,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full font-semibold" disabled={isPending}>
+        <Button type="submit" className="w-full font-semibold" disabled={isPending} variant="outline">
           {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Send Message
         </Button>
