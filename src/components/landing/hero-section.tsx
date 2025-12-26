@@ -5,7 +5,7 @@ import { TextGenerateEffect } from '../ui/text-generate-effect';
 
 export default function HeroSection() {
   return (
-    <section className="w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center bg-background">
+    <section className="w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center bg-background">
       <HeroHighlight containerClassName="h-auto">
         <div className="container mx-auto px-4">
           <div className="mb-4 text-sm font-bold tracking-widest uppercase text-muted-foreground">
