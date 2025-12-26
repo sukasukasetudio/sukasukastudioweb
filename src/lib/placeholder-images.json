@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "Abstract black and white shapes",
+      "imageUrl": "https://images.unsplash.com/photo-1548365740-61792c7b6756?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMG1vbm9jaHJvbWV8ZW58MHx8fHwxNzY2NjgxMjk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract monochrome"
+    },
+    {
+      "id": "portfolio-1",
+      "description": "Minimalist architecture",
+      "imageUrl": "https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2NjY2NTY0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "minimalist architecture"
+    },
+    {
+      "id": "portfolio-2",
+      "description": "Abstract product shot",
+      "imageUrl": "https://images.unsplash.com/photo-1653361953232-cd154e54beff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9kdWN0JTIwc3R1ZGlvfGVufDB8fHx8MTc2Njc0MDc2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "product studio"
+    },
+    {
+      "id": "portfolio-3",
+      "description": "Monochrome portrait",
+      "imageUrl": "https://images.unsplash.com/photo-1732613690070-39f498de40ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb25vY2hyb21lJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY2NjQ1MDU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "monochrome portrait"
+    },
+    {
+      "id": "portfolio-4",
+      "description": "Landscape with strong lines",
+      "imageUrl": "https://images.unsplash.com/photo-1615844310706-c80d4d2bb3f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYW5kc2NhcGUlMjBsaW5lc3xlbnwwfHx8fDE3NjY3NDA3NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "landscape lines"
+    },
+    {
+      "id": "portfolio-5",
+      "description": "Graphic design poster",
+      "imageUrl": "https://images.unsplash.com/photo-1561070791-2526d30994b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxncmFwaGljJTIwZGVzaWdufGVufDB8fHx8MTc2Njc0MDc2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "portfolio-6",
+      "description": "Interior design detail",
+      "imageUrl": "https://images.unsplash.com/photo-1612152605347-f93296cb657d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbnRlcmlvciUyMGRldGFpbHxlbnwwfHx8fDE3NjY3NDA3NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "interior detail"
+    }
+  ]
 }
