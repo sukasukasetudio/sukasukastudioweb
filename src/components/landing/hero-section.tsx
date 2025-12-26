@@ -8,7 +8,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center">
-      <div className="absolute inset-0 bg-background/80 z-10" />
+      <div className="absolute inset-0 bg-background/50 z-10" />
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
@@ -27,10 +27,10 @@ export default function HeroSection() {
           Raya dengan suka suka
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Button asChild size="lg" className="font-semibold" variant="outline">
+          <Button asChild size="lg" className="font-semibold">
             <Link href="#portfolio">View Work</Link>
           </Button>
-          <Button asChild size="lg" className="font-semibold">
+          <Button asChild size="lg" className="font-semibold" variant="outline">
             <Link href="#contact">Contact Us</Link>
           </Button>
         </div>

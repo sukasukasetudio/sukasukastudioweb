@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Mountain } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 const NavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode, onClick?: () => void }) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -33,8 +33,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Mountain className="h-6 w-6" />
+        <Link href="/" className="mr-6 flex items-center">
           <span className="font-bold">Sukasuka Setudio</span>
         </Link>
         <nav className="hidden flex-1 md:flex items-center space-x-6 text-sm font-medium">
@@ -53,8 +52,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col gap-4 mt-8">
-                <Link href="/" className="mb-4 flex items-center space-x-2">
-                  <Mountain className="h-6 w-6" />
+                <Link href="/" className="mb-4 flex items-center">
                   <span className="font-bold">Sukasuka Setudio</span>
                 </Link>
                 <NavLink href="#about" onClick={() => setIsOpen(false)}>About</NavLink>
