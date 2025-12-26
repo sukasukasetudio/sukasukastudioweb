@@ -6,7 +6,18 @@ import { cn } from "@/lib/utils";
 export const TextGenerateEffect = ({
   words,
   className,
-  colors = ["#f87171", "#fb923c", "#fbbf24", "#a3e635", "#4ade80", "#34d399", "#2dd4bf", "#60a5fa", "#818cf8", "#c084fc"]
+  colors = [
+    "rgb(131, 179, 32)",
+    "rgb(47, 195, 106)",
+    "rgb(42, 169, 210)",
+    "rgb(4, 112, 202)",
+    "rgb(107, 10, 255)",
+    "rgb(183, 0, 218)",
+    "rgb(218, 0, 171)",
+    "rgb(230, 64, 92)",
+    "rgb(232, 98, 63)",
+    "rgb(249, 129, 47)",
+  ],
 }: {
   words: string;
   className?: string;
