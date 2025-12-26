@@ -6,9 +6,11 @@ import { cn } from "@/lib/utils";
 export const TextGenerateEffect = ({
   words,
   className,
+  colors = ["#f87171", "#fb923c", "#fbbf24", "#a3e635", "#4ade80", "#34d399", "#2dd4bf", "#60a5fa", "#818cf8", "#c084fc"]
 }: {
   words: string;
   className?: string;
+  colors?: string[];
 }) => {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
@@ -32,7 +34,8 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className="text-foreground opacity-0"
+              style={{ color: colors[idx % colors.length] }}
+              className="opacity-0"
             >
               {word}{" "}
             </motion.span>
@@ -45,7 +48,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-normal", className)}>
       <div className="mt-4">
-        <div className="text-foreground leading-snug tracking-wide">
+        <div className="leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>
