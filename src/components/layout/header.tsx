@@ -45,11 +45,6 @@ export default function Header() {
 
   const navItems = [
     {
-      name: "About",
-      link: "#about",
-      icon: <Info className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-    {
       name: "Services",
       link: "#services",
       icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
@@ -58,13 +53,6 @@ export default function Header() {
       name: "Work",
       link: "#portfolio",
       icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-    {
-      name: "Contact",
-      link: "#contact",
-      icon: (
-        <MessageSquare className="h-4 w-4 text-neutral-500 dark:text-white" />
-      ),
     },
   ];
 
