@@ -1,25 +1,10 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function HeroSection() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-image');
-
   return (
-    <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center">
-      <div className="absolute inset-0 bg-background/50 z-10" />
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          data-ai-hint={heroImage.imageHint}
-          priority
-        />
-      )}
-      <div className="relative z-20 container mx-auto px-4">
+    <section className="w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center">
+      <div className="container mx-auto px-4">
         <h1 className="text-4xl font-black tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl text-foreground">
           Sukasuka Setudio
         </h1>
