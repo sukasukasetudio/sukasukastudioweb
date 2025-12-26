@@ -17,9 +17,29 @@ export default function PortfolioSection() {
         </div>
         <div className="mt-16 columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
           {portfolioImages.map((image) => {
-            const parts = image.imageUrl.split('/');
-            const width = parseInt(parts[parts.length - 2], 10);
-            const height = parseInt(parts[parts.length - 1], 10);
+            let width = 1080;
+            let height = 1080;
+
+            try {
+              const url = new URL(image.imageUrl);
+              if (url.hostname === 'images.unsplash.com') {
+                const w = url.searchParams.get('w');
+                if (w) {
+                  width = parseInt(w, 10);
+                }
+                // For masonry layout, we can derive a sensible height or just use width
+                height = width;
+              } else if (url.hostname === 'picsum.photos') {
+                const parts = url.pathname.split('/');
+                width = parseInt(parts[parts.length - 2], 10);
+                height = parseInt(parts[parts.length - 1], 10);
+              }
+            } catch (e) {
+              // fallback to a default
+              width = 1080;
+              height = 1080;
+            }
+
 
             return (
               <div key={image.id} className="overflow-hidden rounded-lg break-inside-avoid group">
