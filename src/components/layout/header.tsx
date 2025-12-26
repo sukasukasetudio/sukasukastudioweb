@@ -4,8 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
+import { Home, Briefcase, Info, MessageSquare, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { FloatingNav } from '../ui/floating-nav';
+import { useIsMobile } from '@/hooks/use-mobile';
+
 
 const NavLink = ({ href, children, onClick, className }: { href: string; children: React.ReactNode; onClick?: () => void; className?: string }) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -38,10 +41,40 @@ const NavLink = ({ href, children, onClick, className }: { href: string; childre
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const isMobile = useIsMobile();
+
+  const navItems = [
+    {
+      name: "About",
+      link: "#about",
+      icon: <Info className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Services",
+      link: "#services",
+      icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Work",
+      link: "#portfolio",
+      icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Contact",
+      link: "#contact",
+      icon: (
+        <MessageSquare className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
+    },
+  ];
+
+  if (isMobile) {
+    return <FloatingNav navItems={navItems} />;
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4">
         <Link href="/" className="flex items-center">
           <span className="font-bold text-lg">Sukasuka Setudio</span>
         </Link>
