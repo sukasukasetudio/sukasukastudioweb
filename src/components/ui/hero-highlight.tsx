@@ -58,42 +58,30 @@ export const Highlight = ({
   className?: string;
   delay?: number;
 }) => {
-  const [scope, animate] = useAnimate();
-
-  useEffect(() => {
-    animate(
-      "span",
-      {
-        display: "inline-block",
-        opacity: 1,
-        width: "fit-content",
-      },
-      {
-        duration: 0.3,
-        delay: delay,
-        ease: "easeInOut",
-      }
-    );
-  }, [animate, delay]);
-
   return (
-    <motion.div
-      ref={scope}
+    <motion.span
+      initial={{
+        backgroundSize: "0% 100%",
+      }}
+      animate={{
+        backgroundSize: "100% 100%",
+      }}
+      transition={{
+        duration: 0.5,
+        ease: "linear",
+        delay: 0.5,
+      }}
+      style={{
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "left center",
+        display: "inline",
+      }}
       className={cn(
-        "z-20 inline-block w-fit",
+        `relative inline-block pb-1 px-1 rounded-lg bg-gradient-to-r from-primary/20 to-primary/5`,
         className
       )}
     >
-      <motion.span
-        style={{
-          opacity: 0,
-          width: 0,
-          display: 'inline-block',
-        }}
-        className={`z-20 inline-block rounded-md bg-primary/20 px-2 py-0.5`}
-      >
-        {children}
-      </motion.span>
-    </motion.div>
+      {children}
+    </motion.span>
   );
 };
