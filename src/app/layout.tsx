@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
+import { WebGLShader } from '@/components/ui/web-gl-shader';
 
 export const metadata: Metadata = {
   title: 'Sukasuka Setudio',
@@ -21,11 +22,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Toaster />
+      <body className="font-body antialiased relative">
+        <WebGLShader />
+        <div className="relative z-10">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <Toaster />
+        </div>
       </body>
     </html>
   );
