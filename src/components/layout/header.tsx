@@ -41,12 +41,12 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center">
-        <Link href="/" className="mr-6 flex items-center">
+      <div className="container flex h-16 items-center justify-between">
+        <Link href="/" className="flex items-center">
           <span className="font-bold text-lg">Sukasuka Setudio</span>
         </Link>
         
-        <div className="flex flex-1 items-center justify-end">
+        <div className="flex items-center">
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
             <NavLink href="#about">About</NavLink>
             <NavLink href="#services">Services</NavLink>
@@ -61,7 +61,7 @@ export default function Header() {
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="md:hidden ml-4">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
