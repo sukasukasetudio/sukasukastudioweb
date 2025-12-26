@@ -39,7 +39,7 @@ export const HeroHighlight = ({
           className="pointer-events-none absolute inset-0 md:block"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 80%)",
+              "radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 80%)",
           }}
         />
       )}
@@ -90,7 +90,7 @@ export const Highlight = ({
           width: 0,
           display: 'inline-block',
         }}
-        className={`z-20 inline-block bg-primary/20 px-2 py-0.5`}
+        className={`z-20 inline-block rounded-md bg-primary/20 px-2 py-0.5`}
       >
         {children}
       </motion.span>
