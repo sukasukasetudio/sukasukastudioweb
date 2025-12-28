@@ -12,38 +12,13 @@ export const HeroHighlight = ({
   className?: string;
   containerClassName?: string;
 }) => {
-  let [isAnimating, setIsAnimating] = React.useState(false);
-
   return (
     <div
       className={cn(
-        "group/highlight relative h-full w-full",
+        "relative h-full w-full",
         containerClassName
       )}
-      onMouseEnter={() => {
-        setIsAnimating(true);
-      }}
-      onMouseLeave={() => {
-        setIsAnimating(false);
-      }}
     >
-      <div className="pointer-events-none absolute inset-0 md:block" />
-      {isAnimating && (
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          className="pointer-events-none absolute inset-0 md:block"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 80%)",
-          }}
-        />
-      )}
-
       <div className={cn("relative z-20", className)}>{children}</div>
     </div>
   );

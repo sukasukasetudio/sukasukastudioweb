@@ -28,12 +28,12 @@ const NavLink = ({ href, children, onClick, className }: { href: string; childre
       href={href} 
       onClick={handleClick} 
       className={cn(
-        "group text-sm font-medium text-muted-foreground transition-colors hover:text-foreground relative",
+        "group text-sm font-medium transition-colors relative",
         className
       )}
     >
       {children}
-      <span className="absolute bottom-0 left-0 h-[1px] w-full scale-x-0 bg-foreground transition-transform duration-300 ease-out group-hover:scale-x-100" />
+      <span className="absolute bottom-0 left-0 h-[1px] w-full scale-x-0 bg-white transition-transform duration-300 ease-out group-hover:scale-x-100" />
     </Link>
   );
 };
@@ -61,41 +61,43 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center">
-          <span className="font-bold text-lg">Sukasuka Setudio</span>
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-xl supports-[backdrop-filter]:bg-black/60 shadow-sm">
+      <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-6">
+        <Link href="/" className="flex items-center group">
+          <span className="font-bold text-lg group-hover:opacity-80 transition-opacity bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+            Sukasuka Setudio
+          </span>
         </Link>
         
         <div className="flex items-center">
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-            <NavLink href="#about">About</NavLink>
-            <NavLink href="#services">Services</NavLink>
-            <NavLink href="#portfolio">Work</NavLink>
+            <NavLink href="#about" className="text-white/70 hover:text-white">About</NavLink>
+            <NavLink href="#services" className="text-white/70 hover:text-white">Services</NavLink>
+            <NavLink href="#portfolio" className="text-white/70 hover:text-white">Work</NavLink>
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4 ml-8">
-            <Button asChild variant="outline" size="sm" className="font-semibold">
+          <div className="hidden md:flex items-center space-x-3 ml-8">
+            <Button asChild variant="outline" size="sm" className="font-medium text-xs px-4 py-2 hover:scale-105 transition-transform duration-300 bg-transparent border-white/30 text-white hover:bg-white/10">
               <Link href="#contact">Get in Touch</Link>
             </Button>
           </div>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden ml-4">
+              <Button variant="ghost" size="icon" className="md:hidden ml-4 text-white">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-black border-white/20">
               <nav className="flex flex-col gap-6 mt-8">
                 <Link href="/" className="mb-4 flex items-center" onClick={() => setIsOpen(false)}>
-                  <span className="font-bold text-lg">Sukasuka Setudio</span>
+                  <span className="font-bold text-lg text-white">Sukasuka Setudio</span>
                 </Link>
-                <NavLink href="#about" onClick={() => setIsOpen(false)} className="text-base">About</NavLink>
-                <NavLink href="#services" onClick={() => setIsOpen(false)} className="text-base">Services</NavLink>
-                <NavLink href="#portfolio" onClick={() => setIsOpen(false)} className="text-base">Work</NavLink>
-                <NavLink href="#contact" onClick={() => setIsOpen(false)} className="text-base">Contact</NavLink>
+                <NavLink href="#about" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">About</NavLink>
+                <NavLink href="#services" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Services</NavLink>
+                <NavLink href="#portfolio" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Work</NavLink>
+                <NavLink href="#contact" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Contact</NavLink>
               </nav>
             </SheetContent>
           </Sheet>

@@ -7,7 +7,7 @@ import { WebGLShader } from '@/components/ui/web-gl-shader';
 
 export const metadata: Metadata = {
   title: 'Sukasuka Setudio',
-  description: 'Raya dengan suka suka',
+  description: 'Jom rayakan momen indah dengan suka suka',
 };
 
 export default function RootLayout({
