@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Home, Briefcase, Info, MessageSquare, Menu } from 'lucide-react';
+import { Home, Briefcase, Info, MessageSquare, Menu, Calendar, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { FloatingNav } from '../ui/floating-nav';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -46,8 +46,8 @@ export default function Header() {
 
   const navItems = [
     {
-      name: "Services",
-      link: "#services",
+      name: "Feedback",
+      link: "#about",
       icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
@@ -79,14 +79,22 @@ export default function Header() {
         
         <div className="flex items-center">
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-            <NavLink href="#about" className="text-white/70 hover:text-white">About</NavLink>
+            <NavLink href="#about" className="text-white/70 hover:text-white">Feedback</NavLink>
             <NavLink href="#services" className="text-white/70 hover:text-white">Services</NavLink>
             <NavLink href="#portfolio" className="text-white/70 hover:text-white">Package</NavLink>
           </nav>
 
           <div className="hidden md:flex items-center space-x-3 ml-8">
-            <Button asChild variant="outline" size="sm" className="font-medium text-xs px-4 py-2 hover:scale-105 transition-transform duration-300 bg-transparent border-white/30 text-white hover:bg-white/10">
-              <Link href="#contact">Get in Touch</Link>
+            <Button asChild variant="outline" size="sm" className="font-medium text-xs px-4 py-2 hover:scale-105 transition-transform duration-300 bg-transparent border-white/30 text-white hover:bg-white/10 gap-2">
+              <a 
+                href="https://ezflowprod--ezflow-final.asia-southeast1.hosted.app/form/Va9bGozfjYD42L5DLBWH/0X5MStWbjncCf2evtj9V/r3Hn5c2M0uNXUmOLilHB"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Calendar className="h-3.5 w-3.5" />
+                Book Now
+                <ExternalLink className="h-3 w-3" />
+              </a>
             </Button>
           </div>
 
@@ -109,7 +117,7 @@ export default function Header() {
                   />
                   <span className="font-bold text-lg text-white">Sukasuka Setudio</span>
                 </Link>
-                <NavLink href="#about" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">About</NavLink>
+                <NavLink href="#about" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Testimonials</NavLink>
                 <NavLink href="#services" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Services</NavLink>
                 <NavLink href="#portfolio" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Package</NavLink>
                 <NavLink href="#contact" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Contact</NavLink>

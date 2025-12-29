@@ -41,7 +41,7 @@ export default function ContactSection() {
                 <h3 className="text-lg font-bold text-white mb-1.5">Contact Information</h3>
                 <p className="text-xs text-white/60 leading-relaxed">
                   Reach out to us for inquiries or support.
-                </p>
+              </p>
               </div>
               <div className="space-y-3">
                 <motion.a
@@ -56,12 +56,14 @@ export default function ContactSection() {
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-white/50 mb-0.5">Email</p>
                     <span className="text-xs text-white/70 group-hover:text-white transition-colors break-all">
-                      hello@sukasuka.setudio
-                    </span>
+                    sukasuka.setudio@gmail.com
+                  </span>
                   </div>
                 </motion.a>
                 <motion.a
-                  href="tel:+1234567890"
+                  href="https://wa.me/60137582300"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2.5 group p-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -72,8 +74,8 @@ export default function ContactSection() {
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-white/50 mb-0.5">Phone</p>
                     <span className="text-xs text-white/70 group-hover:text-white transition-colors">
-                      +1 (234) 567-890
-                    </span>
+                    +60 (13) 758-2300
+                  </span>
                   </div>
                 </motion.a>
                 <motion.a
@@ -90,8 +92,8 @@ export default function ContactSection() {
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-white/50 mb-0.5">Location</p>
                     <span className="text-xs text-white/70 group-hover:text-white transition-colors leading-relaxed">
-                      Jalan Setia Gemilang BJ U13/BJ, Setia Alam, 40170 Shah Alam, Selangor
-                    </span>
+                    Jalan Setia Gemilang BJ U13/BJ, Setia Alam, 40170 Shah Alam, Selangor
+                  </span>
                   </div>
                 </motion.a>
               </div>
@@ -115,7 +117,7 @@ export default function ContactSection() {
                 <ArrowRight className="h-4 w-4 text-white/90" />
               </motion.div>
             </div>
-            <ContactForm />
+              <ContactForm />
           </motion.div>
         </div>
       </div>
