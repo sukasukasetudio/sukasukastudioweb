@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Home, Briefcase, Info, MessageSquare, Menu } from 'lucide-react';
@@ -50,7 +51,7 @@ export default function Header() {
       icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
-      name: "Work",
+      name: "Package",
       link: "#portfolio",
       icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
@@ -63,7 +64,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-xl supports-[backdrop-filter]:bg-black/60 shadow-sm">
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center group">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <Image
+            src="/img/iconsuka.png"
+            alt="Sukasuka Setudio Logo"
+            width={32}
+            height={32}
+            className="object-contain"
+          />
           <span className="font-bold text-lg group-hover:opacity-80 transition-opacity bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
             Sukasuka Setudio
           </span>
@@ -73,7 +81,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
             <NavLink href="#about" className="text-white/70 hover:text-white">About</NavLink>
             <NavLink href="#services" className="text-white/70 hover:text-white">Services</NavLink>
-            <NavLink href="#portfolio" className="text-white/70 hover:text-white">Work</NavLink>
+            <NavLink href="#portfolio" className="text-white/70 hover:text-white">Package</NavLink>
           </nav>
 
           <div className="hidden md:flex items-center space-x-3 ml-8">
@@ -91,12 +99,19 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-black border-white/20">
               <nav className="flex flex-col gap-6 mt-8">
-                <Link href="/" className="mb-4 flex items-center" onClick={() => setIsOpen(false)}>
+                <Link href="/" className="mb-4 flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
+                  <Image
+                    src="/img/iconsuka.png"
+                    alt="Sukasuka Setudio Logo"
+                    width={28}
+                    height={28}
+                    className="object-contain"
+                  />
                   <span className="font-bold text-lg text-white">Sukasuka Setudio</span>
                 </Link>
                 <NavLink href="#about" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">About</NavLink>
                 <NavLink href="#services" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Services</NavLink>
-                <NavLink href="#portfolio" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Work</NavLink>
+                <NavLink href="#portfolio" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Package</NavLink>
                 <NavLink href="#contact" onClick={() => setIsOpen(false)} className="text-base text-white/70 hover:text-white">Contact</NavLink>
               </nav>
             </SheetContent>
