@@ -188,7 +188,7 @@ export default function PortfolioSection() {
                 <div className="h-px w-20 bg-gradient-to-r from-transparent via-white/30 to-white/20"></div>
                 <div className="flex flex-col items-center gap-1">
                   <h3 className="text-xs font-light tracking-[0.2em] uppercase text-white/50">Deco</h3>
-                  <span className="text-3xl font-light tracking-wider text-white">SELF SHOOT</span>
+                  <span className="text-3xl font-light tracking-wider text-white">SELFSHOOT</span>
                 </div>
                 <div className="h-px w-20 bg-gradient-to-l from-transparent via-white/30 to-white/20"></div>
               </div>
