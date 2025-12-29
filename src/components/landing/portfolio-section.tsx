@@ -96,7 +96,7 @@ export default function PortfolioSection() {
                   </div>
                 </motion.div>
               ))}
-            </div>
+        </div>
           </motion.div>
 
           {/* Package 2 */}
@@ -134,9 +134,9 @@ export default function PortfolioSection() {
                   >
                     <div className="mx-2 flex-1">
                       <div className="relative mt-2 aspect-[3/4] w-full">
-                        <Image
+                <Image
                           src={image.src}
-                          alt={image.description}
+                  alt={image.description}
                           width={1080}
                           height={1080}
                           className="absolute inset-0 h-full w-full rounded-[16px] bg-[#000000] object-cover contrast-75"
@@ -144,8 +144,8 @@ export default function PortfolioSection() {
                             boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 6px 0px",
                             opacity: 1,
                           }}
-                        />
-                      </div>
+                />
+              </div>
                     </div>
                     <div className="mt-2 flex flex-shrink-0 items-center justify-between p-4 font-mono text-white">
                       <div className="text-xs">{image.description}</div>

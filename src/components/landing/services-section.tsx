@@ -85,7 +85,7 @@ export default function ServicesSection() {
                     </p>
                   </div>
                 </GlareCard>
-              </div>
+        </div>
             </motion.div>
           ))}
         </div>

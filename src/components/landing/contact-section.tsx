@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactForm } from './contact-form';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
@@ -65,6 +65,21 @@ export default function ContactSection() {
                   </div>
                   <span className="text-base text-white/70 group-hover:text-white transition-colors">
                     +1 (234) 567-890
+                  </span>
+                </motion.a>
+                <motion.a
+                  href="https://www.google.com/maps/search/?api=1&query=Jalan+Setia+Gemilang+BJ+U13%2FBJ%2C+Setia+Alam%2C+40170+Shah+Alam%2C+Selangor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <div className="p-2.5 rounded-lg bg-white/10 border border-white/20 group-hover:bg-white/20 transition-colors">
+                    <MapPin className="h-5 w-5 text-white" />
+                  </div>
+                  <span className="text-base text-white/70 group-hover:text-white transition-colors">
+                    Jalan Setia Gemilang BJ U13/BJ, Setia Alam, 40170 Shah Alam, Selangor
                   </span>
                 </motion.a>
               </div>
