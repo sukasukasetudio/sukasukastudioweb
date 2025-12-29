@@ -73,7 +73,7 @@ export default function Header() {
             className="object-contain"
           />
           <span className="font-bold text-lg group-hover:opacity-80 transition-opacity bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
-            Sukasuka Setudio
+            SUKASUKA SETUDIO
           </span>
         </Link>
         
