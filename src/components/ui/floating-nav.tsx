@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, JSX } from "react";
 import {
   motion,
   AnimatePresence,
@@ -20,15 +20,40 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
-  const { scrollYProgress } = useScroll();
 
+  const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
+  const [inContactOrFooter, setInContactOrFooter] = useState(false);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    const footer = document.getElementById("footer");
+    const nav = document.getElementById("floating-nav");
+    if (!footer) return;
+
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      // If any of the observed elements are intersecting, hide the nav
+      const isIntersecting = entries.some(entry => entry.isIntersecting);
+      setInContactOrFooter(isIntersecting);
+    };
+
+    observerRef.current = new window.IntersectionObserver(handleIntersect, {
+      root: null,
+      threshold: 0.1,
+    });
+    if (footer) observerRef.current.observe(footer);
+
+    return () => {
+      if (observerRef.current) {
+        if (footer) observerRef.current.unobserve(footer as Element);
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
-
+      let direction = current - (scrollYProgress.getPrevious() ?? 0);
       if (scrollYProgress.get() < 0.05) {
         setVisible(true);
       } else {
@@ -53,13 +78,14 @@ export const FloatingNav = ({
   return (
     <AnimatePresence mode="wait">
       <motion.div
+        id="floating-nav"
         initial={{
           opacity: 1,
           y: 100,
         }}
         animate={{
-          y: visible ? 0 : 100,
-          opacity: visible ? 1 : 0,
+          y: visible && !inContactOrFooter ? 0 : 100,
+          opacity: visible && !inContactOrFooter ? 1 : 0,
         }}
         transition={{
           duration: 0.2,

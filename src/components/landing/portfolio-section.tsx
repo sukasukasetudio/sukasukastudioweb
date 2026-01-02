@@ -28,9 +28,9 @@ const rayaPackages = [
 ];
 
 const package2 = [
-  { id: 'suka4', src: '/img/IMG_0237.avif', description: 'Retro Vibe' },
-  { id: 'suka5', src: '/img/IMG_9677.avif', description: 'Pop Vibe' },
-  { id: 'suka6', src: '/img/IMG_9677.avif', description: 'Funky Vibe' },
+  { id: 'suka4', src: '/img/IMG_0237.avif', description: 'Retro' },
+  { id: 'suka5', src: '/img/IMG_9677.avif', description: 'Funky' },
+  { id: 'suka6', src: '/img/IMG_9677.avif', description: 'Studio' },
 ];
 
 const selfShootPackages = [
@@ -144,7 +144,7 @@ export default function PortfolioSection() {
             >
               <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-[#1A1A1A] to-[#0F0F0F] px-5 py-5 shadow-2xl shadow-black/50">
                 <div className="mb-8 text-center">
-                  <h3 className="text-2xl font-light tracking-wide text-white mb-2">Package List</h3>
+                  <h3 className="text-2xl font-light tracking-wide text-white mb-2">Package RAYA</h3>
                   <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -238,7 +238,7 @@ export default function PortfolioSection() {
             >
               <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-[#1A1A1A] to-[#0F0F0F] px-6 py-8 shadow-2xl shadow-black/50">
                 <div className="mb-8 text-center">
-                  <h3 className="text-2xl font-light tracking-wide text-white mb-2">Package List</h3>
+                  <h3 className="text-2xl font-light tracking-wide text-white mb-2">Package SELFSHOOT</h3>
                   <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
