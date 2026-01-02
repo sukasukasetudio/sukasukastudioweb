@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const package1 = [
-  { id: 'suka1', src: '/img/suka1.jpg', description: 'Minimalist' },
-  { id: 'suka2', src: '/img/suka2.jpg', description: 'Classic' },
+  { id: 'suka1', src: '/img/IMG_0237.avif', description: 'Minimalist' },
+  { id: 'suka2', src: '/img/IMG_9677.avif', description: 'Classic' },
 ];
 
 const rayaPackages = [
@@ -28,9 +28,9 @@ const rayaPackages = [
 ];
 
 const package2 = [
-  { id: 'suka4', src: '/img/suka4.jpg', description: 'Retro Vibe' },
-  { id: 'suka5', src: '/img/suka5.jpg', description: 'Pop Vibe' },
-  { id: 'suka6', src: '/img/suka6.jpg', description: 'Funky Vibe' },
+  { id: 'suka4', src: '/img/IMG_0237.avif', description: 'Retro Vibe' },
+  { id: 'suka5', src: '/img/IMG_9677.avif', description: 'Pop Vibe' },
+  { id: 'suka6', src: '/img/IMG_9677.avif', description: 'Funky Vibe' },
 ];
 
 const selfShootPackages = [

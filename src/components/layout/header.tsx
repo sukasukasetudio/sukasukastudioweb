@@ -81,7 +81,8 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
             <NavLink href="#about" className="text-white/70 hover:text-white">Feedback</NavLink>
             <NavLink href="#services" className="text-white/70 hover:text-white">Services</NavLink>
-            <NavLink href="#portfolio" className="text-white/70 hover:text-white">Package</NavLink>
+            <NavLink href="#portfolio" className="text-white/70 hover:text-white">Collection</NavLink>
+            <NavLink href="#contact" className="text-white/70 hover:text-white">Contact</NavLink>
           </nav>
 
           <div className="hidden md:flex items-center space-x-3 ml-8">

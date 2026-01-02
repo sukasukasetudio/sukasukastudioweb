@@ -92,7 +92,7 @@ export default function ContactSection() {
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-white/50 mb-0.5">Location</p>
                     <span className="text-xs text-white/70 group-hover:text-white transition-colors leading-relaxed">
-                    Jalan Setia Gemilang BJ U13/BJ, Setia Alam, 40170 Shah Alam, Selangor
+                    102-1, Jalan Setia Gemilang BJ U13/BJ, Setia Alam, 40170 Shah Alam, Selangor
                   </span>
                   </div>
                 </motion.a>

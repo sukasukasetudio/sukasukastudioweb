@@ -13,7 +13,7 @@ const testimonials = [
     role: "Pengantin",
     rating: 5,
     text: "Pengalaman yang menakjubkan! Pasukan berjaya menangkap setiap detik berharga dengan cantik. Gambar yang dihasilkan melebihi jangkaan kami dan kami sangat gembira dengan hasilnya.",
-    image: "/img/suka1.jpg",
+    image: "/img/IMG_0237.avif",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const testimonials = [
     role: "Pengantin Lelaki",
     rating: 5,
     text: "Perkhidmatan profesional dari mula hingga akhir. Jurugambar sangat mesra, kreatif, dan membuatkan kami berasa selesa sepanjang sesi.",
-    image: "/img/suka2.jpg",
+    image: "/img/IMG_0237.avif",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const testimonials = [
     role: "Penganjur Acara",
     rating: 5,
     text: "Kualiti yang luar biasa dan perhatian terhadap butiran. Sukasuka Setudio menyampaikan tepat apa yang kami perlukan untuk acara korporat kami. Sangat disyorkan!",
-    image: "/img/suka3.jpg",
+    image: "/img/IMG_9677.avif",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const testimonials = [
     role: "Pelanggan",
     rating: 5,
     text: "Proses tempahan sangat lancar dan pasukan sangat membantu. Gambar akhir sangat menakjubkan dan berjaya menangkap intipati sambutan kami dengan sempurna.",
-    image: "/img/suka4.jpg",
+    image: "/img/IMG_9677.avif",
   },
 ];
 

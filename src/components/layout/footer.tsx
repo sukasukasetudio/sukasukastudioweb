@@ -11,66 +11,57 @@ const TikTokIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-// Threads Icon SVG (stylized @ symbol)
-const ThreadsIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/>
-    <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4"/>
-    <path d="M12 8v8"/>
-  </svg>
-);
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/10 bg-black/50 backdrop-blur-sm">
-      <div className="container mx-auto flex max-w-screen-2xl flex-col md:flex-row items-center justify-between py-12 px-6 gap-8">
+      <div className="container mx-auto flex max-w-screen-2xl flex-col md:flex-row items-center justify-between py-6 px-6 gap-6">
         <div>
-          <Link href="/" className="flex items-center group">
-            <span className="font-bold text-lg group-hover:opacity-80 transition-opacity bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
-              Sukasuka Setudio
-            </span>
-          </Link>
-          <div className="mt-3">
+          <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center group">
+              <span className="font-bold text-lg group-hover:opacity-80 transition-opacity bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                SUKASUKA SETUDIO
+              </span>
+            </Link>
+            <span className="text-xs text-white/40">SSM: 202503170887</span>
+          </div>
+          <div className="mt-0">
             <p className="text-sm text-white/60">
-              © {new Date().getFullYear()} Sukasuka Setudio. All rights reserved.
+              © {new Date().getFullYear()} All rights reserved.
             </p>
-            <p className="text-xs text-white/40 mt-1.5">
-              Designed & Developed by Aimwave Labs
+            </div>
+          <div className="mt-2">
+            <p className="text-xs text-white/40 mt-1">
+              Designed & Developed by AIMWAVE LABS
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-6">
-          <motion.a
-            href="https://www.tiktok.com/@sukasuka.film_?is_from_webapp=1&sender_device=pc"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-            className="text-white/60 hover:text-white transition-colors"
-            whileHover={{ scale: 1.2, rotate: 5 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <TikTokIcon className="h-5 w-5" />
-          </motion.a>
-          <motion.a
-            href="https://www.instagram.com/p/C50fw8ovu6X/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="text-white/60 hover:text-white transition-colors"
-            whileHover={{ scale: 1.2, rotate: -5 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Instagram className="h-5 w-5" />
-          </motion.a>
-          <motion.a
-            href="#"
-            aria-label="Threads"
-            className="text-white/60 hover:text-white transition-colors"
-            whileHover={{ scale: 1.2, rotate: 5 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <ThreadsIcon className="h-5 w-5" />
-          </motion.a>
+        <div className="flex items-center gap-3">
+          <span className="text-xs text-white/40">Our social media</span>
+          <div className="flex items-center gap-3">
+            <motion.a
+              href="https://www.tiktok.com/@sukasuka.film_?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="text-white/60 hover:text-white transition-colors"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <TikTokIcon className="h-5 w-5" />
+            </motion.a>
+            <motion.a
+              href="https://www.instagram.com/p/C50fw8ovu6X/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-white/60 hover:text-white transition-colors"
+              whileHover={{ scale: 1.2, rotate: -5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Instagram className="h-5 w-5" />
+            </motion.a>
+          </div>
         </div>
       </div>
     </footer>
