@@ -51,7 +51,7 @@ export default function Header() {
       icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
-      name: "Package",
+      name: "Collection",
       link: "#portfolio",
       icon: <Briefcase className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
