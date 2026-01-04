@@ -4,16 +4,25 @@ const MOBILE_BREAKPOINT = 768
 
 export function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
+  const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {
+    // Set initial value immediately to prevent hydration mismatch
+    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
+    setMounted(true)
+    
     const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
     const onChange = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
     }
     mql.addEventListener("change", onChange)
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
     return () => mql.removeEventListener("change", onChange)
   }, [])
+
+  // Return undefined until mounted to let parent handle hydration
+  if (!mounted) {
+    return undefined
+  }
 
   return isMobile
 }

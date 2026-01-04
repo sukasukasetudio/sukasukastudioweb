@@ -57,6 +57,11 @@ export default function Header() {
     },
   ];
 
+  // Return null while hydrating to prevent layout shift
+  if (isMobile === undefined) {
+    return null;
+  }
+
   if (isMobile) {
     return <FloatingNav navItems={navItems} />;
   }
