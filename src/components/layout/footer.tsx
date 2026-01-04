@@ -14,7 +14,7 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-black/50 backdrop-blur-sm">
+    <footer id="footer" className="relative border-t border-white/10 bg-black/50 backdrop-blur-sm">
       <div className="container mx-auto flex max-w-screen-2xl flex-col md:flex-row items-center justify-between py-6 px-6 gap-6">
         <div>
           <div className="flex items-center gap-2">

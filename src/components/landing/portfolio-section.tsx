@@ -70,9 +70,9 @@ export default function PortfolioSection() {
           className="max-w-2xl mx-auto text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
-            Our Selected{' '}
+            Our{' '}
             <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
-              Package
+              Collection & Package
             </span>
           </h2>
           <p className="text-sm sm:text-base text-white/60 tracking-wide leading-relaxed font-light">

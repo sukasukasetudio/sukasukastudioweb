@@ -22,30 +22,42 @@ export const FloatingNav = ({
 }) => {
 
   const { scrollYProgress } = useScroll();
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const [inContactOrFooter, setInContactOrFooter] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const footer = document.getElementById("footer");
-    const nav = document.getElementById("floating-nav");
-    if (!footer) return;
+    // Set hydrated immediately to show nav after hydration
+    setHydrated(true);
+    setVisible(true);
+  }, []);
 
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      // If any of the observed elements are intersecting, hide the nav
-      const isIntersecting = entries.some(entry => entry.isIntersecting);
-      setInContactOrFooter(isIntersecting);
-    };
+  useEffect(() => {
+    // Delay to ensure elements are fully mounted before observing
+    const timer = setTimeout(() => {
+      const contact = document.getElementById("contact");
+      const footer = document.getElementById("footer");
+      
+      if (!contact && !footer) return;
 
-    observerRef.current = new window.IntersectionObserver(handleIntersect, {
-      root: null,
-      threshold: 0.1,
-    });
-    if (footer) observerRef.current.observe(footer);
+      const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+        // If any of the observed elements are intersecting, hide the nav
+        const isIntersecting = entries.some(entry => entry.isIntersecting);
+        setInContactOrFooter(isIntersecting);
+      };
+
+      observerRef.current = new window.IntersectionObserver(handleIntersect, {
+        root: null,
+        threshold: 0,
+      });
+      if (contact) observerRef.current.observe(contact);
+      if (footer) observerRef.current.observe(footer);
+    }, 100);
 
     return () => {
+      clearTimeout(timer);
       if (observerRef.current) {
-        if (footer) observerRef.current.unobserve(footer as Element);
         observerRef.current.disconnect();
       }
     };
@@ -80,7 +92,7 @@ export const FloatingNav = ({
       <motion.div
         id="floating-nav"
         initial={{
-          opacity: 1,
+          opacity: 0,
           y: 100,
         }}
         animate={{
@@ -88,7 +100,8 @@ export const FloatingNav = ({
           opacity: visible && !inContactOrFooter ? 1 : 0,
         }}
         transition={{
-          duration: 0.2,
+          duration: 0.3,
+          ease: "easeOut",
         }}
         className={cn(
           "flex max-w-fit fixed bottom-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4 md:hidden",
