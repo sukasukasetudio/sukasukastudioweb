@@ -33,7 +33,7 @@ const rayaPackages = [
 const package2 = [
   { id: 'retro', src: '/img/retro.avif', description: 'Retro' },
   { id: 'funky', src: '/img/funky.avif', description: 'Funky' },
-  { id: 'backdrop', src: '/img/backdrop.avif', description: 'Backdrop' },
+  { id: 'studio', src: '/img/studio.avif', description: 'Studio' },
 ];
 
 const selfShootPackages = [
@@ -87,10 +87,10 @@ export default function PortfolioSection() {
       alt: 'Funky collection' 
     },
     { 
-      id: 'backdrop', 
-      src: '/img/highimg/backdro.jpg', 
-      lowResSrc: '/img/backdrop.avif',
-      alt: 'Backdrop collection' 
+      id: 'studio', 
+      src: '/img/highimg/studio.jpg', 
+      lowResSrc: '/img/studio.avif',
+      alt: 'Studio collection' 
     },
   ];
 

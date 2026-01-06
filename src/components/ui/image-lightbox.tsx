@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ImageLightboxProps {
   src: string;
@@ -29,6 +30,7 @@ export const ImageLightbox = ({
   hasPrev = false,
   enableZoom = false,
 }: ImageLightboxProps) => {
+  const isMobile = useIsMobile();
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [zoom, setZoom] = useState(1);
@@ -38,6 +40,9 @@ export const ImageLightbox = ({
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const touchDistanceRef = useRef(0);
+  
+  // Disable zoom on mobile
+  const shouldEnableZoom = enableZoom && !isMobile;
 
   useEffect(() => {
     if (isOpen) {
@@ -56,6 +61,14 @@ export const ImageLightbox = ({
     }
   }, [isOpen, src]);
 
+  // Reset zoom on mobile when it changes
+  useEffect(() => {
+    if (isMobile) {
+      setZoom(1);
+      setPan({ x: 0, y: 0 });
+    }
+  }, [isMobile]);
+
   // Handle keyboard events
   useEffect(() => {
     if (!isOpen) return;
@@ -67,9 +80,9 @@ export const ImageLightbox = ({
         onNext();
       } else if (e.key === "ArrowLeft" && onPrev && hasPrev) {
         onPrev();
-      } else if (e.key === "+") {
+      } else if (e.key === "+" && shouldEnableZoom) {
         handleZoomIn();
-      } else if (e.key === "-") {
+      } else if (e.key === "-" && shouldEnableZoom) {
         handleZoomOut();
       }
     };
@@ -80,14 +93,15 @@ export const ImageLightbox = ({
 
   // Handle scroll wheel zoom
   const handleWheel = useCallback((e: WheelEvent) => {
-    if (!enableZoom) return;
+    if (!shouldEnableZoom) return;
     e.preventDefault();
     const delta = e.deltaY > 0 ? -0.1 : 0.1;
     setZoom((prev) => Math.max(1, Math.min(4, prev + delta)));
-  }, [enableZoom]);
+  }, [shouldEnableZoom]);
 
-  // Handle pinch zoom on touch devices
+  // Handle pinch zoom on touch devices (disabled on mobile)
   const handleTouchStart = (e: React.TouchEvent) => {
+    if (!shouldEnableZoom) return;
     if (e.touches.length === 2) {
       const distance = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
@@ -98,6 +112,7 @@ export const ImageLightbox = ({
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    if (!shouldEnableZoom) return;
     if (e.touches.length === 2 && touchDistanceRef.current) {
       const distance = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
@@ -124,7 +139,7 @@ export const ImageLightbox = ({
 
   // Handle mouse drag to pan zoomed image
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (zoom <= 1) return; // Only allow dragging when zoomed in
+    if (!shouldEnableZoom || zoom <= 1) return; // Only allow dragging when zoomed in and zoom is enabled
     setIsDragging(true);
     setDragStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
   };
@@ -252,8 +267,8 @@ export const ImageLightbox = ({
                 </motion.button>
               )}
 
-              {/* Zoom controls - only show if enableZoom is true */}
-              {enableZoom && (
+              {/* Zoom controls - only show if enableZoom is true and not on mobile */}
+              {shouldEnableZoom && (
                 <>
                   {/* Zoom out button */}
                   <motion.button
