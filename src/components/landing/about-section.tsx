@@ -44,7 +44,7 @@ const testimonials = [
     name: "Ainur",
     role: "Selfshoot - White Backdrop",
     rating: 5,
-    text: "Proses tempahan sangat lancar dan pasukan sangat membantu. Gambar akhir sangat menakjubkan dan berjaya menangkap intipati sambutan kami dengan sempurna.",
+    text: "Mr Amir layan kami dengan baik dan sangat penyabar sebab anak saya cranky tak nak ambil gambar. Really appreciate him, good service anyways. Me and my husband so satisfied with the photographer & the service. Thank you so much.",
     image: "/img/f4.avif",
     lowResImage: "/img/f4.avif",
     highResImage: "/img/highimg/f4.jpg",
