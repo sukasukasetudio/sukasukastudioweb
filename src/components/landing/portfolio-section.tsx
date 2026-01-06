@@ -88,7 +88,7 @@ export default function PortfolioSection() {
     },
     { 
       id: 'backdrop', 
-      src: '/img/highimg/backdrop.jpg', 
+      src: '/img/highimg/backdro.jpg', 
       lowResSrc: '/img/backdrop.avif',
       alt: 'Backdrop collection' 
     },
