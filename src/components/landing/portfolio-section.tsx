@@ -2,10 +2,13 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { ImageLightbox } from '@/components/ui/image-lightbox';
+import { useImageLightbox } from '@/hooks/use-image-lightbox';
 
 const package1 = [
-  { id: 'suka1', src: '/img/IMG_0237.avif', description: 'Minimalist' },
-  { id: 'suka2', src: '/img/IMG_9677.avif', description: 'Classic' },
+  { id: 'minimalist', src: '/img/minimalist.avif', description: 'Minimalist' },
+  { id: 'classic', src: '/img/classic.avif', description: 'Classic' },
 ];
 
 const rayaPackages = [
@@ -17,7 +20,7 @@ const rayaPackages = [
   },
   { 
     name: 'Package B (2 Deco)', 
-    prices: ['RM180'],
+    prices: ['RM120'],
     includes: ['Unlimited Shots', 'All photos edited', '20 minutes', '1-8 pax', 'Add on pax - RM10/pax']
   },
   { 
@@ -28,9 +31,9 @@ const rayaPackages = [
 ];
 
 const package2 = [
-  { id: 'suka4', src: '/img/IMG_0237.avif', description: 'Retro' },
-  { id: 'suka5', src: '/img/IMG_9677.avif', description: 'Funky' },
-  { id: 'suka6', src: '/img/IMG_9677.avif', description: 'Studio' },
+  { id: 'retro', src: '/img/retro.avif', description: 'Retro' },
+  { id: 'funky', src: '/img/funky.avif', description: 'Funky' },
+  { id: 'backdrop', src: '/img/backdrop.avif', description: 'Backdrop' },
 ];
 
 const selfShootPackages = [
@@ -54,6 +57,46 @@ const selfShootPackages = [
 ];
 
 export default function PortfolioSection() {
+  // Prepare images for lightbox with high-res versions
+  const package1Images = [
+    { 
+      id: 'minimalist', 
+      src: '/img/highimg/minimalist.jpg', 
+      lowResSrc: '/img/minimalist.avif',
+      alt: 'Minimalist collection' 
+    },
+    { 
+      id: 'classic', 
+      src: '/img/highimg/classic.jpg', 
+      lowResSrc: '/img/classic.avif',
+      alt: 'Classic collection' 
+    },
+  ];
+
+  const package2Images = [
+    { 
+      id: 'retro', 
+      src: '/img/highimg/retro.jpg', 
+      lowResSrc: '/img/retro.avif',
+      alt: 'Retro collection' 
+    },
+    { 
+      id: 'funky', 
+      src: '/img/highimg/funky.jpg', 
+      lowResSrc: '/img/funky.avif',
+      alt: 'Funky collection' 
+    },
+    { 
+      id: 'backdrop', 
+      src: '/img/highimg/backdrop.jpg', 
+      lowResSrc: '/img/backdrop.avif',
+      alt: 'Backdrop collection' 
+    },
+  ];
+
+  const lightbox1 = useImageLightbox(package1Images);
+  const lightbox2 = useImageLightbox(package2Images);
+
   return (
     <section id="portfolio" className="relative py-20 sm:py-24 overflow-hidden bg-black/50">
       <div className="absolute inset-0 gradient-mesh opacity-20 z-[3]" />
@@ -113,6 +156,7 @@ export default function PortfolioSection() {
                     style={{
                       transformStyle: "preserve-3d",
                     }}
+                    onClick={() => lightbox1.open(index)}
                   >
                     <div className="mx-1 flex-1 overflow-hidden rounded-xl">
                       <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl">
@@ -208,6 +252,7 @@ export default function PortfolioSection() {
                     style={{
                       transformStyle: "preserve-3d",
                     }}
+                    onClick={() => lightbox2.open(index)}
                   >
                     <div className="mx-1 flex-1 overflow-hidden rounded-xl">
                       <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl">
@@ -271,6 +316,38 @@ export default function PortfolioSection() {
           </motion.div>
         </div>
       </div>
+      
+      {/* Lightbox for Package 1 */}
+      {lightbox1.current && (
+        <ImageLightbox
+          src={lightbox1.current.src}
+          lowResSrc={lightbox1.current.lowResSrc}
+          alt={lightbox1.current.alt}
+          isOpen={lightbox1.isOpen}
+          onClose={lightbox1.close}
+          onNext={lightbox1.next}
+          onPrev={lightbox1.prev}
+          hasNext={lightbox1.hasNext}
+          hasPrev={lightbox1.hasPrev}
+          enableZoom={true}
+        />
+      )}
+
+      {/* Lightbox for Package 2 */}
+      {lightbox2.current && (
+        <ImageLightbox
+          src={lightbox2.current.src}
+          lowResSrc={lightbox2.current.lowResSrc}
+          alt={lightbox2.current.alt}
+          isOpen={lightbox2.isOpen}
+          onClose={lightbox2.close}
+          onNext={lightbox2.next}
+          onPrev={lightbox2.prev}
+          hasNext={lightbox2.hasNext}
+          hasPrev={lightbox2.hasPrev}
+          enableZoom={true}
+        />
+      )}
     </section>
   );
 }

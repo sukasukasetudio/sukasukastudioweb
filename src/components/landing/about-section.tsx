@@ -5,45 +5,65 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Quote, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { ImageLightbox } from "@/components/ui/image-lightbox";
+import { useImageLightbox } from "@/hooks/use-image-lightbox";
 
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Ahmad",
-    role: "Pengantin",
+    name: "Nadia",
+    role: "Deco Raya - Minimalist",
     rating: 5,
-    text: "Pengalaman yang menakjubkan! Pasukan berjaya menangkap setiap detik berharga dengan cantik. Gambar yang dihasilkan melebihi jangkaan kami dan kami sangat gembira dengan hasilnya.",
-    image: "/img/IMG_0237.avif",
+    text: "Sumpah set raya kat sini paling aesthetic! Lighting dia on point gila. Photographer pun pandai direction-kan kitorang yang keras kejung depan camera ni. Memang puas hati, tahun depan nak shoot sini lagi!",
+    image: "/img/fligh.avif",
+    lowResImage: "/img/fligh.avif",
+    highResImage: "/img/highimg/fligh.jpg",
   },
   {
     id: 2,
-    name: "Ahmad Zaki",
-    role: "Pengantin Lelaki",
+    name: "Elisya",
+    role: "Selfshoot - Beige Backdrop",
     rating: 5,
-    text: "Perkhidmatan profesional dari mula hingga akhir. Jurugambar sangat mesra, kreatif, dan membuatkan kami berasa selesa sepanjang sesi.",
-    image: "/img/IMG_0237.avif",
+    text: "Sangat berpuas hati dengan servis dari Sukasuka Setudio. Proses dari awal sampai siap sangat smooth dan teratur. Walaupun saya ada minta banyak adjustment, dorang tetap layan dengan sabar. Hasil kerja pun kemas dan hantar tepat pada masanya. Recommended!",
+    image: "/img/fsan.avif",
+    lowResImage: "/img/fsan.avif",
+    highResImage: "/img/highimg/fsan.jpg",
   },
   {
     id: 3,
-    name: "Nurul Iman",
-    role: "Penganjur Acara",
+    name: "Shaherah",
+    role: "Selfshoot - Beige Backdrop",
     rating: 5,
-    text: "Kualiti yang luar biasa dan perhatian terhadap butiran. Sukasuka Setudio menyampaikan tepat apa yang kami perlukan untuk acara korporat kami. Sangat disyorkan!",
-    image: "/img/IMG_9677.avif",
+    text: "Sumpah tak menyesal pilih studio ni! Hasil dia memang luar biasa, jauh lagi cantik dari apa yang I bayangkan. Paling best sebab team dorang sangat senang bawa bincang dan faham apa yang kita nak. Keep it up guys! Memang akan repeat lagi lepas ni.",
+    image: "/img/fsu.avif",
+    lowResImage: "/img/fsu.avif",
+    highResImage: "/img/highimg/fsu.jpg",
   },
   {
     id: 4,
-    name: "Muhammad Firdaus",
-    role: "Pelanggan",
+    name: "Ainur",
+    role: "Selfshoot - White Backdrop",
     rating: 5,
     text: "Proses tempahan sangat lancar dan pasukan sangat membantu. Gambar akhir sangat menakjubkan dan berjaya menangkap intipati sambutan kami dengan sempurna.",
-    image: "/img/IMG_9677.avif",
+    image: "/img/f4.avif",
+    lowResImage: "/img/f4.avif",
+    highResImage: "/img/highimg/f4.jpg",
   },
 ];
 
 export default function AboutSection() {
   const [api, setApi] = useState<any>(null);
   const [current, setCurrent] = useState(0);
+
+  // Prepare images for lightbox
+  const lightboxImages = testimonials.map((testimonial) => ({
+    id: testimonial.id.toString(),
+    src: testimonial.highResImage,
+    lowResSrc: testimonial.lowResImage,
+    alt: `${testimonial.name} - ${testimonial.role}`,
+  }));
+
+  const lightbox = useImageLightbox(lightboxImages);
 
   useEffect(() => {
     if (!api) return;
@@ -96,7 +116,7 @@ export default function AboutSection() {
                 <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 basis-full">
                   <div className="group flex w-full h-full flex-col md:flex-row rounded-2xl border border-white/10 bg-gradient-to-b from-[#1A1A1A] to-[#0F0F0F] p-3 transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-white/5">
                     {/* Image Side */}
-                    <div className="relative w-full md:w-1/2 h-56 md:h-auto flex-shrink-0 mx-1 my-1">
+                    <div className="relative w-full md:w-1/2 h-56 md:h-auto flex-shrink-0 mx-1 my-1 cursor-pointer" onClick={() => lightbox.open(index)}>
                       <div className="relative w-full h-full rounded-xl overflow-hidden">
                         {testimonial.image ? (
                           <Image
@@ -157,6 +177,21 @@ export default function AboutSection() {
           </div>
         </motion.div>
       </div>
+
+      {/* Lightbox for testimonial images */}
+      {lightbox.current && (
+        <ImageLightbox
+          src={lightbox.current.src}
+          lowResSrc={lightbox.current.lowResSrc}
+          alt={lightbox.current.alt}
+          isOpen={lightbox.isOpen}
+          onClose={lightbox.close}
+          onNext={lightbox.next}
+          onPrev={lightbox.prev}
+          hasNext={lightbox.hasNext}
+          hasPrev={lightbox.hasPrev}
+        />
+      )}
     </section>
   );
 }

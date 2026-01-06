@@ -5,7 +5,7 @@ import { Calendar, ExternalLink } from 'lucide-react';
 
 export function ContactForm() {
   // Booking form URL - opens in new tab to avoid affecting your system
-  const bookingUrl = "https://ezflowprod--ezflow-final.asia-southeast1.hosted.app/form/Va9bGozfjYD42L5DLBWH/0X5MStWbjncCf2evtj9V/r3Hn5c2M0uNXUmOLilHB";
+  const bookingUrl = "https://ezflows--studio-1796733651-612d4.asia-southeast1.hosted.app/form/sabf719HccpNfW919NfI/Lrp9bqPoYKXoIMEEgSJD/jJAvX6ObUtFFDUnmEcsG";
 
   return (
     <div className="w-full h-full">

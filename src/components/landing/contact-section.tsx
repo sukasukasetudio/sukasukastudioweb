@@ -45,7 +45,7 @@ export default function ContactSection() {
               </div>
               <div className="space-y-3">
                 <motion.a
-                  href="mailto:hello@sukasuka.setudio"
+                  href="mailto:sukasuka.setudio@gmail.com"
                   className="flex items-center gap-2.5 group p-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -61,7 +61,7 @@ export default function ContactSection() {
                   </div>
                 </motion.a>
                 <motion.a
-                  href="https://wa.me/60137582300"
+                  href="https://wa.me/601169624163"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2.5 group p-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
@@ -74,12 +74,12 @@ export default function ContactSection() {
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-white/50 mb-0.5">Phone</p>
                     <span className="text-xs text-white/70 group-hover:text-white transition-colors">
-                    +60 (13) 758-2300
+                    +60 (11) 696-24163
                   </span>
                   </div>
                 </motion.a>
                 <motion.a
-                  href="https://www.google.com/maps/search/?api=1&query=Jalan+Setia+Gemilang+BJ+U13%2FBJ%2C+Setia+Alam%2C+40170+Shah+Alam%2C+Selangor"
+                  href="https://maps.app.goo.gl/eGBQzvsZdSNGXJSQ9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-2.5 group p-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all"
