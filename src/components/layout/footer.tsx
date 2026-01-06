@@ -30,11 +30,6 @@ export default function Footer() {
               © {new Date().getFullYear()} All rights reserved.
             </p>
             </div>
-          <div className="mt-2">
-            <p className="text-xs text-white/40 mt-1">
-              Designed & Developed by AIMWAVE LABS
-            </p>
-          </div>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-xs text-white/40">Our social media</span>
