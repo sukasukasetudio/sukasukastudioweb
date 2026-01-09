@@ -16,17 +16,17 @@ const rayaPackages = [
     name: 'Package A (1 Deco)', 
     showAnyDeco: true,
     prices: ['RM99'],
-    includes: ['Unlimited Shots', 'All photos edited', '20 minutes', '1-8 pax', 'Add on pax - RM10/pax']
+    includes: ['Unlimited Shots', 'All photos edited', '20 minutes', '1-8 pax', 'Add on pax - RM10/pax', 'Photographer x 1']
   },
   { 
     name: 'Package B (2 Deco)', 
     prices: ['RM120'],
-    includes: ['Unlimited Shots', 'All photos edited', '20 minutes', '1-8 pax', 'Add on pax - RM10/pax']
+    includes: ['Unlimited Shots', 'All photos edited', '20 minutes', '1-8 pax', 'Add on pax - RM10/pax', 'Photographer x 1']
   },
   { 
     name: 'Package C (2 Deco)', 
     prices: ['RM180'],
-    includes: ['Unlimited Shots', 'All photos edited', '40 minutes', 'Maximum 12 pax', 'Add on pax - RM10/pax']
+    includes: ['Unlimited Shots', 'All photos edited', '40 minutes', 'Maximum 12 pax', 'Add on pax - RM10/pax', 'Photographer x 1']
   },
 ];
 
