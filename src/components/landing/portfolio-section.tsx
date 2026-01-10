@@ -59,7 +59,7 @@ const selfShootPackages = [
 const package3 = [
   { id: 'retro', src: '/img/retro.avif', description: 'Retro' },
   { id: 'funky', src: '/img/funky.avif', description: 'Funky' },
-  { id: 'studio', src: '/img/studio.avif', description: 'Backdrop' },
+  { id: 'studio', src: '/img/EventBirthday.avif', description: 'Backdrop' },
 ];
 
 const EventShootPackages = [
@@ -135,8 +135,8 @@ export default function PortfolioSection() {
     },
     { 
       id: 'studio', 
-      src: '/img/highimg/studio.jpg', 
-      lowResSrc: '/img/studio.avif',
+      src: '/img/highimg/EventBirthday.jpg', 
+      lowResSrc: '/img/EventBirthday.avif',
       alt: 'Backdrop collection' 
     },
   ];
