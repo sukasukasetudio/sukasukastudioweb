@@ -26,7 +26,7 @@ const rayaPackages = [
   { 
     name: 'Package C (2 Deco)', 
     prices: ['RM180'],
-    includes: ['Unlimited Shots', 'All photos edited', '40 minutes', 'Maximum 12 pax', 'Add on pax - RM10/pax', 'Photographer x 1']
+    includes: ['Unlimited Shots', 'All photos edited', '40 minutes', '1-12 pax', 'Add on pax - RM10/pax', 'Photographer x 1']
   },
 ];
 
@@ -41,18 +41,18 @@ const selfShootPackages = [
     name: 'Package A (1 Deco)', 
     showAnyDeco: true,
     prices: ['RM49'],
-    includes: ['Unlimited Shots (20 mins)', 'All photos edited', '1-3 pax', 'Add on pax - RM10/pax', 'Add on time - RM25/10 min']
+    includes: ['Unlimited Shots (20 mins)', 'All photos edited', '1-3 pax', 'Add on pax - RM10/pax']
   },
   { 
     name: 'Package B (2 Deco)', 
     showAnyDeco: true,
     prices: ['RM89'],
-    includes: ['Unlimited Shots (25 mins)', 'All photos edited', '1-4 pax', 'Add on pax - RM10/pax', 'Add on time - RM25/10 min']
+    includes: ['Unlimited Shots (20 mins)', 'All photos edited', '1-4 pax', 'Add on pax - RM10/pax']
   },
   { 
     name: 'Package C (3 Deco)', 
     prices: ['RM99'],
-    includes: ['Unlimited Shots (35 mins)', 'All photos edited', '1-4 pax', 'Add on pax - RM10/pax', 'Add on time - RM25/10 min']
+    includes: ['Unlimited Shots (40 mins)', 'All photos edited', '1-4 pax', 'Add on pax - RM10/pax']
   },
 ];
 

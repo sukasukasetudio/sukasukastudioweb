@@ -24,7 +24,7 @@ const testimonials = [
     name: "Elisya",
     role: "Selfshoot - Beige Backdrop",
     rating: 5,
-    text: "Sangat berpuas hati dengan servis dari Sukasuka Setudio. Proses dari awal sampai siap sangat smooth dan teratur. Walaupun saya ada minta banyak adjustment, dorang tetap layan dengan sabar. Hasil kerja pun kemas dan hantar tepat pada masanya. Recommended!",
+    text: "Great customer service, smooth transaction & awesome team. Paling penting kita selesa utk bergambar dengan anak anak kecil dan gambar all quality👍 Tq",
     image: "/img/fsan.avif",
     lowResImage: "/img/fsan.avif",
     highResImage: "/img/highimg/fsan.jpg",
